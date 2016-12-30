@@ -1,0 +1,100 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x2119730 .scope module, "bcd_to_binary_tb" "bcd_to_binary_tb" 2 10;
+ .timescale 0 0;
+v0x2164500_0 .var "bcd_code", 7 0;
+RS_0x7f7a830d1288 .resolv tri, L_0x2164650, L_0x2164830, L_0x2164ba0, L_0x2165130;
+v0x21645a0_0 .net8 "binary_code", 3 0, RS_0x7f7a830d1288; 4 drivers
+S_0x2119820 .scope module, "btb" "bcd_to_binary" 2 15, 2 1, S_0x2119730;
+ .timescale 0 0;
+L_0x2164110 .functor XOR 1, L_0x21648d0, L_0x21649a0, C4<0>, C4<0>;
+L_0x2164eb0 .functor AND 1, L_0x2164d70, L_0x2164e10, C4<1>, C4<1>;
+L_0x2164fe0 .functor OR 1, L_0x2164cd0, L_0x2164eb0, C4<0>, C4<0>;
+L_0x21651d0 .functor OR 1, L_0x2165230, L_0x21653e0, C4<0>, C4<0>;
+v0x214f610_0 .net *"_s10", 0 0, L_0x2164110; 1 drivers
+v0x2163af0_0 .net *"_s15", 0 0, L_0x2164cd0; 1 drivers
+v0x2163b90_0 .net *"_s17", 0 0, L_0x2164d70; 1 drivers
+v0x2163c30_0 .net *"_s19", 0 0, L_0x2164e10; 1 drivers
+v0x2163ce0_0 .net *"_s20", 0 0, L_0x2164eb0; 1 drivers
+v0x2163d80_0 .net *"_s22", 0 0, L_0x2164fe0; 1 drivers
+v0x2163e60_0 .net *"_s27", 0 0, L_0x2165230; 1 drivers
+v0x2163f00_0 .net *"_s29", 0 0, L_0x21653e0; 1 drivers
+v0x2163ff0_0 .net *"_s3", 0 0, L_0x21646f0; 1 drivers
+v0x2164090_0 .net *"_s30", 0 0, L_0x21651d0; 1 drivers
+v0x2164190_0 .net *"_s7", 0 0, L_0x21648d0; 1 drivers
+v0x2164230_0 .net *"_s9", 0 0, L_0x21649a0; 1 drivers
+v0x2164340_0 .net "in", 7 0, v0x2164500_0; 1 drivers
+v0x21643e0_0 .alias "out", 3 0, v0x21645a0_0;
+L_0x2164650 .part/pv L_0x21646f0, 0, 1, 4;
+L_0x21646f0 .part v0x2164500_0, 0, 1;
+L_0x2164830 .part/pv L_0x2164110, 1, 1, 4;
+L_0x21648d0 .part v0x2164500_0, 1, 1;
+L_0x21649a0 .part v0x2164500_0, 4, 1;
+L_0x2164ba0 .part/pv L_0x2164fe0, 2, 1, 4;
+L_0x2164cd0 .part v0x2164500_0, 2, 1;
+L_0x2164d70 .part v0x2164500_0, 4, 1;
+L_0x2164e10 .part v0x2164500_0, 1, 1;
+L_0x2165130 .part/pv L_0x21651d0, 3, 1, 4;
+L_0x2165230 .part v0x2164500_0, 3, 1;
+L_0x21653e0 .part v0x2164500_0, 4, 1;
+    .scope S_0x2119730;
+T_0 ;
+    %vpi_call 2 18 "$monitor", "bcd code=%b %b, binary code=%b", &PV<v0x2164500_0, 4, 4>, &PV<v0x2164500_0, 0, 4>, v0x21645a0_0;
+    %set/v v0x2164500_0, 0, 8;
+    %delay 5, 0;
+    %movi 8, 1, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 2, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 3, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 4, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 5, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 6, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 7, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 8, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 9, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 16, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 17, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 18, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 19, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 20, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %delay 5, 0;
+    %movi 8, 21, 8;
+    %set/v v0x2164500_0, 8, 8;
+    %vpi_call 2 35 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "bcd_to_binary.v";
